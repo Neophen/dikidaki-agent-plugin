@@ -17,7 +17,7 @@ class are required. Normal DikiDaki plan limits apply.
 Browser authorization currently supports local Codex and Claude Code clients.
 Hosted ChatGPT and Claude web authorization is not yet supported.
 
-Directory publication is pending review. This repository is a direct distribution
+Directory submissions are being prepared; this package is not yet listed. This repository is a direct distribution
 option; it does not imply approval by OpenAI or Anthropic.
 
 For Claude Code, add this marketplace and install the plugin:
@@ -43,9 +43,13 @@ codex mcp login dikidaki
 ```
 
 Use one installation method per client to avoid duplicate tools. Authorize another
-connection separately if you want to work with a second class.
+connection separately if you want to work with a second class: add the server
+under a different name using your client’s MCP settings.
 
 ## Try it
+
+Start with “Which class is DikiDaki connected to?” or ask for a draft before
+publishing. The following examples explicitly request live publication:
 
 - “Post class news: Please bring a water bottle for Friday’s trip.”
 - “Create a children’s participation poll: Will your child join Friday’s trip?”
@@ -55,6 +59,12 @@ For a choice poll, supply the options and whether people may select one answer o
 several. For participation, choose whether parents answer for themselves or their
 children. Missing decisions are clarified before publication. The skill follows
 the language and wording you provide, including English, Lithuanian and Polish.
+
+Claude Code also supports direct server setup:
+
+```sh
+claude mcp add --transport http dikidaki https://dikidaki.lt/mcp
+```
 
 ## Publication and permissions
 

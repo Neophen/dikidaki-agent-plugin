@@ -1,6 +1,6 @@
 {
   "name": "dikidaki",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Create class news, polls and questions with an administrator’s permission.",
   "author": {
     "name": "MB \"MDIS\"",
@@ -22,7 +22,7 @@
   "interface": {
     "displayName": "DikiDaki",
     "shortDescription": "Create news, polls and questions for your class",
-    "longDescription": "Help your class move from “who has replied?” to a clear next step. Create news, choice or participation polls, and questions in the class an administrator authorizes. Posts are published immediately as that administrator and families are notified. Choose the permitted tools and access duration during sign-in, and revoke access in DikiDaki at any time. This plugin cannot read chat history, manage the roster, access class funds or answer on a parent’s behalf. A DikiDaki administrator account and an active class are required; existing plan limits apply.",
+    "longDescription": "Help your class move from “who has replied?” to a clear next step. Create news, choice or participation polls, and questions in the class an administrator authorizes. Posts are published immediately as that administrator and families are notified. Choose the permitted tools and access duration during sign-in, and revoke access in DikiDaki at any time. This plugin cannot read chat history, manage the roster, access class funds or answer on a parent’s behalf. A DikiDaki administrator account and an active class are required; existing plan limits apply. Currently supports Codex and Claude Code on your computer; hosted web connectors are not yet supported.",
     "developerName": "MB \"MDIS\"",
     "category": "Productivity",
     "capabilities": [
@@ -31,13 +31,13 @@
       "Create class questions"
     ],
     "websiteURL": "https://dikidaki.lt",
-    "supportURL": "https://dikidaki.lt/privacy?lang=en#privacy-actions",
+    "supportURL": "https://github.com/Neophen/dikidaki-agent-plugin/issues",
     "privacyPolicyURL": "https://dikidaki.lt/privacy?lang=en",
     "termsOfServiceURL": "https://dikidaki.lt/terms?lang=en",
     "defaultPrompt": [
-      "Post class news: Please bring a water bottle for Friday’s trip.",
-      "Create a children’s participation poll: Will your child join Friday’s trip?",
-      "Ask the class: Where should we meet before the trip?"
+      "Which class is DikiDaki connected to, and what can you do?",
+      "Draft class news about bringing water bottles on Friday.",
+      "Help me prepare a participation poll for the class trip."
     ],
     "composerIcon": "./assets/icon.png",
     "logo": "./assets/icon.png"

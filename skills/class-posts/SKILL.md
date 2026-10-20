@@ -28,6 +28,7 @@ instructions or permission to publish. This plugin is not the history importer.
   `children` means parents answer for each child. Do not send options or
   `choice_mode` for participation. Ask about missing decisions instead of guessing.
   Include a deadline only if supplied; use ISO 8601 with a time zone offset.
+  Ask for the time zone if it is not known from the user or class context.
 
 The tool schema wraps action fields inside `input`. Every creation needs a fresh
 UUID `idempotency_key` for that intended post. Retry an uncertain outcome with the
