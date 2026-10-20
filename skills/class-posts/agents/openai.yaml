@@ -1,0 +1,11 @@
+interface:
+  display_name: "DikiDaki class posts"
+  short_description: "Create class news, polls and questions"
+  default_prompt: "Use $class-posts to help me publish a class update in DikiDaki."
+dependencies:
+  tools:
+    - type: "mcp"
+      value: "dikidaki"
+      description: "Class-scoped DikiDaki creation tools"
+      transport: "streamable_http"
+      url: "https://dikidaki.lt/mcp"

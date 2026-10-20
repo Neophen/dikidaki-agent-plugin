@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "dikidaki": {
+      "type": "http",
+      "url": "https://dikidaki.lt/mcp"
+    }
+  }
+}

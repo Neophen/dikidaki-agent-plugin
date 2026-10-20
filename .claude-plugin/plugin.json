@@ -1,0 +1,22 @@
+{
+  "name": "dikidaki",
+  "version": "1.0.0",
+  "description": "Create class news, polls and questions with an administrator’s permission.",
+  "author": {
+    "name": "MB \"MDIS\"",
+    "email": "mykolas@mdis.lt",
+    "url": "https://dikidaki.lt"
+  },
+  "homepage": "https://dikidaki.lt",
+  "repository": "https://github.com/Neophen/dikidaki-agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "dikidaki",
+    "class",
+    "parents",
+    "polls",
+    "school"
+  ],
+  "mcpServers": "./.mcp.json",
+  "skills": "./skills/"
+}

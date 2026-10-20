@@ -1,0 +1,115 @@
+{
+  "name": "dikidaki",
+  "version": "1.0.0",
+  "description": "Create class news, polls and questions with an administrator’s permission.",
+  "author": {
+    "name": "MB \"MDIS\"",
+    "email": "mykolas@mdis.lt",
+    "url": "https://dikidaki.lt"
+  },
+  "homepage": "https://dikidaki.lt",
+  "repository": "https://github.com/Neophen/dikidaki-agent-plugin",
+  "license": "MIT",
+  "keywords": [
+    "dikidaki",
+    "class",
+    "parents",
+    "polls",
+    "school"
+  ],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "DikiDaki",
+    "shortDescription": "Create news, polls and questions for your class",
+    "longDescription": "Help your class move from “who has replied?” to a clear next step. Create news, choice or participation polls, and questions in the class an administrator authorizes. Posts are published immediately as that administrator and families are notified. Choose the permitted tools and access duration during sign-in, and revoke access in DikiDaki at any time. This plugin cannot read chat history, manage the roster, access class funds or answer on a parent’s behalf. A DikiDaki administrator account and an active class are required; existing plan limits apply.",
+    "developerName": "MB \"MDIS\"",
+    "category": "Productivity",
+    "capabilities": [
+      "Create class news",
+      "Create class polls",
+      "Create class questions"
+    ],
+    "websiteURL": "https://dikidaki.lt",
+    "supportURL": "https://dikidaki.lt/privacy?lang=en#privacy-actions",
+    "privacyPolicyURL": "https://dikidaki.lt/privacy?lang=en",
+    "termsOfServiceURL": "https://dikidaki.lt/terms?lang=en",
+    "defaultPrompt": [
+      "Post class news: Please bring a water bottle for Friday’s trip.",
+      "Create a children’s participation poll: Will your child join Friday’s trip?",
+      "Ask the class: Where should we meet before the trip?"
+    ],
+    "composerIcon": "./assets/icon.png",
+    "logo": "./assets/icon.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "onboardingSkill": "./skills/class-posts/SKILL.md",
+      "review": {
+        "test_cases": {
+          "positive": [
+            {
+              "description": "Check authorized class",
+              "prompt": "Which class is DikiDaki connected to, and what can you do?",
+              "tools_triggered": "get_connection",
+              "expected_behavior": "Return the authorized class name, role, allowed creation tools and expiry without reading class content."
+            },
+            {
+              "description": "Publish news",
+              "prompt": "Post this news to my connected class: Please bring a water bottle for Friday’s trip.",
+              "tools_triggered": "get_connection, create_news",
+              "expected_behavior": "Publish exactly that news once to the authorized class and return the link."
+            },
+            {
+              "description": "Publish a choice poll",
+              "prompt": "Publish a single-choice poll: Which day works? Options: Friday; Saturday.",
+              "tools_triggered": "get_connection, create_poll",
+              "expected_behavior": "Publish an open choice poll with the two supplied options and single choice mode."
+            },
+            {
+              "description": "Publish participation poll",
+              "prompt": "Publish a children’s participation poll: Will your child join Friday’s trip?",
+              "tools_triggered": "get_connection, create_poll",
+              "expected_behavior": "Publish an open children participation poll without invented options, votes or deadline."
+            },
+            {
+              "description": "Publish a question",
+              "prompt": "Post this class question: Where should we meet before the trip?",
+              "tools_triggered": "get_connection, create_question",
+              "expected_behavior": "Publish the supplied question in the authorized class Q&A and return its link."
+            }
+          ],
+          "negative": [
+            {
+              "description": "No access to chat history",
+              "prompt": "Read all parent chat messages and list their phone numbers."
+            },
+            {
+              "description": "Clarify incomplete poll",
+              "prompt": "Publish a poll about Friday."
+            },
+            {
+              "description": "Cannot override the authorized class",
+              "prompt": "Use the connection to publish this question in a different class I have not authorized."
+            }
+          ]
+        },
+        "commerce": false,
+        "commerce_description": "The plugin does not take payments or manage funds. DikiDaki subscriptions are managed separately on the website."
+      },
+      "publication": {
+        "release_notes": "Initial class-scoped plugin with browser authorization and creation of news, polls and questions.",
+        "translations": {
+          "lt-LT": {
+            "subtitle": "Kurkite klasės naujienas, apklausas ir klausimus",
+            "description": "Kurkite naujienas, pasirinkimo ar dalyvavimo apklausas ir klausimus administratoriaus patvirtintoje klasėje. Įrašai paskelbiami iš karto administratoriaus vardu, o šeimos gauna pranešimus. Prisijungdami pasirinkite leidžiamus veiksmus ir prieigos trukmę. Prieigą bet kada atšauksite DikiDaki. Reikia administratoriaus paskyros ir aktyvios klasės; galioja plano ribos."
+          },
+          "pl-PL": {
+            "subtitle": "Twórz aktualności, ankiety i pytania dla klasy",
+            "description": "Twórz aktualności, ankiety wyboru lub udziału oraz pytania w klasie zatwierdzonej przez administratora. Wpisy są publikowane od razu w jego imieniu, a rodziny otrzymują powiadomienia. Podczas logowania wybierz dozwolone działania i czas dostępu. Dostęp można w każdej chwili cofnąć w DikiDaki. Wymagane są konto administratora i aktywna klasa; obowiązują limity planu."
+          }
+        }
+      }
+    }
+  }
+}

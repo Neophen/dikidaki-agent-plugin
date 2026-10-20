@@ -1,0 +1,17 @@
+{
+  "name": "dikidaki",
+  "owner": {
+    "name": "MB \"MDIS\"",
+    "email": "mykolas@mdis.lt"
+  },
+  "plugins": [
+    {
+      "name": "dikidaki",
+      "source": "./",
+      "description": "Create class news, polls and questions with an administrator’s permission."
+    }
+  ],
+  "metadata": {
+    "description": "DikiDaki class communication tools for adult class administrators."
+  }
+}
